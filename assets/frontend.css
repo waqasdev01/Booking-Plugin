@@ -1,0 +1,4 @@
+/* Base resets for the booking form wrapper — the fully editable styling
+   lives in the CSS Editor tab and is inlined by the [wise_booking_form]
+   shortcode so it can be changed without touching plugin files. */
+.wise-booking-form-wrap * { box-sizing: border-box; }

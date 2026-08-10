@@ -1,0 +1,181 @@
+/* ============ Theme variables ============ */
+.wise-mirror-admin-wrap {
+	--wm-bg: #F7F3EC;
+	--wm-panel: #ffffff;
+	--wm-border: #E8D8C3;
+	--wm-text: #0F0F0F;
+	--wm-text-muted: #4C4C4C;
+	--wm-accent: #C47A2C;
+	--wm-accent-2: #5FA9B5;
+	--wm-sidebar-bg: #0F0F0F;
+	--wm-sidebar-text: #cfc7bb;
+	--wm-sidebar-active: #ffffff;
+	--wm-success-bg: #e5f4ed;
+	--wm-success-text: #2F6F78;
+	--wm-warn-bg: #F5EBDD;
+	--wm-warn-text: #C47A2C;
+	--wm-error-bg: #fbe4e4;
+	--wm-error-text: #8a1f1f;
+	max-width: 100%;
+	background: var(--wm-bg);
+	padding: 12px 20px 40px;
+	color: var(--wm-text);
+}
+.wise-mirror-admin-wrap.wise-dark-mode {
+	--wm-bg: #16140f;
+	--wm-panel: #201d17;
+	--wm-border: #3a342a;
+	--wm-text: #f2ece1;
+	--wm-text-muted: #b7ae9f;
+	--wm-sidebar-bg: #0a0906;
+	--wm-sidebar-text: #a89f92;
+	--wm-success-bg: #17332a;
+	--wm-success-text: #7fd6b0;
+	--wm-warn-bg: #332c1c;
+	--wm-warn-text: #E2A95B;
+	--wm-error-bg: #3a1f1f;
+	--wm-error-text: #f2a3a3;
+}
+.wise-mirror-admin-wrap, .wise-mirror-admin-wrap * { box-sizing: border-box; }
+.wise-mirror-admin-wrap h1, .wise-mirror-admin-wrap h2, .wise-mirror-admin-wrap h3, .wise-mirror-admin-wrap h4 { color: var(--wm-text); }
+.wise-mirror-admin-wrap p, .wise-mirror-admin-wrap .description { color: var(--wm-text-muted); }
+.wise-mirror-admin-wrap code { background: var(--wm-warn-bg); color: var(--wm-text); }
+
+/* ============ Topbar ============ */
+.wise-mirror-topbar { display: flex; align-items: center; justify-content: space-between; padding: 6px 0 14px; }
+.wise-mirror-topbar h1 { margin: 0; font-size: 22px; }
+.wise-mirror-topbar-right { display: flex; align-items: center; gap: 12px; }
+.wise-mirror-version { font-size: 12px; color: var(--wm-text-muted); background: var(--wm-panel); border: 1px solid var(--wm-border); padding: 3px 10px; border-radius: 999px; }
+.wise-mirror-theme-toggle { background: var(--wm-panel); border: 1px solid var(--wm-border); border-radius: 8px; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+.wise-mirror-theme-toggle .dashicons { color: var(--wm-accent); }
+
+/* ============ Shell: sidebar + main ============ */
+.wise-mirror-shell { display: flex; gap: 22px; align-items: flex-start; }
+.wise-mirror-sidebar {
+	width: 240px; flex: 0 0 240px; background: var(--wm-sidebar-bg); border-radius: 14px; padding: 12px;
+	position: sticky; top: 40px; max-height: calc(100vh - 60px); overflow-y: auto;
+}
+.wise-mirror-nav-link, .wise-mirror-nav-group-toggle {
+	display: flex; align-items: center; gap: 10px; width: 100%; text-align: left; background: none; border: none;
+	color: var(--wm-sidebar-text); font-size: 13.5px; font-weight: 600; padding: 10px 12px; border-radius: 8px; cursor: pointer;
+	text-decoration: none;
+}
+.wise-mirror-nav-link:hover, .wise-mirror-nav-group-toggle:hover { color: #fff; background: rgba(255,255,255,.06); }
+.wise-mirror-nav-link.wise-active { background: #fff; color: #0F0F0F; }
+.wise-mirror-nav-link .dashicons, .wise-mirror-nav-group-toggle .dashicons:first-child { font-size: 17px; width: 17px; height: 17px; }
+.wise-mirror-nav-caret { margin-left: auto; font-size: 14px; width: 14px; height: 14px; transition: transform .15s ease; }
+.wise-mirror-nav-group.wise-open .wise-mirror-nav-caret { transform: rotate(180deg); }
+.wise-mirror-nav-children { display: none; padding-left: 30px; margin: 2px 0 6px; }
+.wise-mirror-nav-group.wise-open .wise-mirror-nav-children { display: block; }
+.wise-mirror-nav-children a { display: block; padding: 7px 10px; font-size: 13px; color: var(--wm-sidebar-text); text-decoration: none; border-radius: 6px; }
+.wise-mirror-nav-children a:hover { color: #fff; }
+.wise-mirror-nav-children a.wise-active { color: #fff; background: rgba(255,255,255,.1); font-weight: 700; }
+
+.wise-mirror-main { flex: 1; min-width: 0; }
+.wise-mirror-page-header { margin-bottom: 16px; }
+.wise-mirror-page-header h2 { margin: 0 0 4px; font-size: 21px; }
+
+/* ============ Panels & cards ============ */
+.wise-mirror-panel { background: var(--wm-panel); border: 1px solid var(--wm-border); border-radius: 12px; padding: 22px 26px; margin-top: 16px; }
+.wise-mirror-panel:first-child { margin-top: 0; }
+.wise-mirror-panel h3 { margin-top: 0; color: var(--wm-accent); }
+.wise-mirror-cards { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 4px; }
+.wise-mirror-card { background: var(--wm-panel); border: 1px solid var(--wm-border); border-radius: 12px; padding: 16px 20px; min-width: 160px; flex: 1; }
+.wise-mirror-card-label { display: block; font-size: 11.5px; text-transform: uppercase; color: var(--wm-text-muted); margin-bottom: 6px; letter-spacing: .03em; }
+.wise-mirror-card-value { display: block; font-size: 26px; font-weight: 700; color: var(--wm-text); }
+
+.wise-mirror-code-block { display: inline-block; background: var(--wm-warn-bg); border: 1px solid var(--wm-accent); padding: 6px 10px; border-radius: 6px; font-size: 12px; word-break: break-all; }
+.wise-mirror-code-editor { width: 100%; min-height: 380px; font-family: Consolas, Monaco, monospace; }
+.wise-mirror-link-list li { margin-bottom: 8px; }
+.wise-mirror-pricing-table td, .wise-mirror-pricing-table th { padding: 10px; vertical-align: top; }
+.wise-color-field { width: 90px; margin-right: 16px; }
+
+.wise-mirror-status { padding: 2px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; background: var(--wm-warn-bg); color: var(--wm-warn-text); }
+.wise-mirror-status-paid, .wise-mirror-status-confirmed, .wise-mirror-status-info { background: var(--wm-success-bg); color: var(--wm-success-text); }
+.wise-mirror-status-pending, .wise-mirror-status-awaiting_payment, .wise-mirror-status-debug { background: var(--wm-warn-bg); color: var(--wm-warn-text); }
+.wise-mirror-status-failed, .wise-mirror-status-expired, .wise-mirror-status-error { background: var(--wm-error-bg); color: var(--wm-error-text); }
+.wise-mirror-status-ai, .wise-mirror-status-api { background: #e6ecfa; color: #35519e; }
+
+.wise-mirror-badge-live { color: var(--wm-error-text); font-weight: 700; }
+.wise-mirror-badge-test { color: var(--wm-success-text); font-weight: 700; }
+.wise-mirror-inline-note { background: var(--wm-warn-bg); padding: 10px 14px; border-radius: 8px; color: var(--wm-text); }
+.wise-mirror-pagination { margin-top: 12px; }
+.wise-mirror-table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.wise-mirror-table-scroll table { min-width: 640px; }
+.wise-mirror-schedule-table input[type="time"] { width: 110px; }
+.wise-mirror-form-actions { margin-top: 16px; }
+.wise-mirror-panel .form-table th { width: 220px; color: var(--wm-text); }
+.wise-mirror-panel .form-table td { color: var(--wm-text); }
+.wise-mirror-panel input, .wise-mirror-panel select, .wise-mirror-panel textarea {
+	background: var(--wm-panel); color: var(--wm-text); border-color: var(--wm-border);
+}
+.wise-mirror-panel .button-primary { background: var(--wm-accent); border-color: var(--wm-accent); }
+.wise-mirror-panel .button-primary:hover { background: #E2A95B; border-color: #E2A95B; }
+
+/* ============ Sub-tabs (Form Editor, System Settings) ============ */
+.wise-mirror-subtabs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; border-bottom: 1px solid var(--wm-border); padding-bottom: 12px; }
+.wise-mirror-subtabs button { background: var(--wm-warn-bg); color: var(--wm-text); border: none; padding: 7px 14px; border-radius: 999px; font-size: 12.5px; font-weight: 600; cursor: pointer; }
+.wise-mirror-subtabs button.wise-active { background: var(--wm-accent); color: #fff; }
+.wise-mirror-preview-frame { width: 100%; height: 640px; border: 1px solid var(--wm-border); border-radius: 10px; background: #fff; margin-top: 12px; }
+.wise-mirror-reset-form { margin-top: 10px; }
+
+/* ============ Session Manager ============ */
+.wise-mirror-sessions-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px; }
+.wise-session-row { border: 1px solid var(--wm-border); border-radius: 10px; background: var(--wm-bg); }
+.wise-session-head { display: flex; align-items: center; gap: 10px; padding: 10px 14px; flex-wrap: wrap; }
+.wise-drag-handle { cursor: grab; color: var(--wm-text-muted); font-size: 16px; }
+.wise-session-name-input { flex: 1; min-width: 160px; padding: 8px 10px; border: 1px solid var(--wm-border); border-radius: 6px; background: var(--wm-panel); color: var(--wm-text); }
+.wise-session-price-preview { font-weight: 700; color: var(--wm-accent); font-size: 13px; min-width: 60px; }
+.wise-session-body { padding: 14px; border-top: 1px solid var(--wm-border); }
+.wise-session-row .wise-field-row { margin-bottom: 0; }
+
+/* ============ AI provider fields ============ */
+.wise-ai-provider-fields { border: 1px solid var(--wm-border); border-radius: 10px; padding: 4px 18px 12px; margin-bottom: 16px; }
+.wise-ai-provider-fields h3 { font-size: 14px; text-transform: uppercase; letter-spacing: .03em; color: var(--wm-accent-2); }
+.wise-mirror-test-block { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--wm-border); }
+.wise-example-photos { display: flex; flex-wrap: wrap; gap: 20px; margin: 12px 0 20px; }
+.wise-example-photo-field { border: 1px solid var(--wm-border); border-radius: 10px; padding: 14px; width: 180px; text-align: center; }
+.wise-example-photo-label { display: block; font-size: 12.5px; font-weight: 600; margin-bottom: 8px; }
+.wise-example-photo-preview { width: 100%; height: 110px; border-radius: 8px; background: var(--wm-warn-bg); overflow: hidden; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; }
+.wise-example-photo-preview img { width: 100%; height: 100%; object-fit: cover; }
+.wise-example-photo-field .button { margin: 2px; }
+
+/* ============ Webhooks ============ */
+.wise-webhook-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--wm-border); }
+.wise-webhook-row label { font-size: 13px; display: inline-flex; align-items: center; gap: 5px; }
+
+/* ============ Log filters ============ */
+.wise-mirror-log-filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 6px; }
+
+/* ============ Bar charts (Analytics) ============ */
+.wise-mirror-bar-chart { display: flex; flex-direction: column; gap: 10px; }
+.wise-mirror-bar-row { display: flex; align-items: center; gap: 10px; }
+.wise-mirror-bar-label { width: 180px; font-size: 13px; color: var(--wm-text-muted); flex-shrink: 0; }
+.wise-mirror-bar-track { flex: 1; background: var(--wm-warn-bg); border-radius: 999px; height: 14px; overflow: hidden; }
+.wise-mirror-bar-fill { height: 100%; background: linear-gradient(90deg, var(--wm-accent-2), var(--wm-accent)); border-radius: 999px; }
+.wise-mirror-bar-value { width: 30px; text-align: right; font-size: 13px; font-weight: 700; }
+.wise-mirror-bar-chart-vertical { flex-direction: row; align-items: flex-end; gap: 10px; height: 160px; }
+.wise-mirror-vbar { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; gap: 6px; }
+.wise-mirror-vbar-fill { width: 60%; background: linear-gradient(180deg, var(--wm-accent-2), var(--wm-accent)); border-radius: 6px 6px 0 0; min-height: 3px; }
+.wise-mirror-vbar span { font-size: 10.5px; color: var(--wm-text-muted); }
+
+/* ============ Mobile responsiveness ============ */
+@media (max-width: 960px) {
+	.wise-mirror-shell { flex-direction: column; }
+	.wise-mirror-sidebar { width: 100%; flex: 1 1 auto; position: static; max-height: none; }
+	.wise-mirror-nav-children { padding-left: 20px; }
+}
+@media (max-width: 782px) {
+	.wise-mirror-admin-wrap { padding: 8px 10px 30px; }
+	.wise-mirror-panel { padding: 16px; }
+	.wise-mirror-cards { flex-direction: column; }
+	.wise-mirror-card { min-width: 0; }
+	.wise-mirror-panel .form-table th { width: auto; display: block; padding-bottom: 4px; }
+	.wise-mirror-panel .form-table td { display: block; padding-top: 0; }
+	.wise-mirror-pricing-table thead { display: none; }
+	.wise-mirror-pricing-table, .wise-mirror-pricing-table tbody, .wise-mirror-pricing-table tr, .wise-mirror-pricing-table td { display: block; width: 100%; }
+	.wise-mirror-pricing-table tr { border-bottom: 2px solid var(--wm-border); margin-bottom: 12px; padding-bottom: 8px; }
+	.wise-color-field { margin-bottom: 8px; }
+	.wise-session-head { flex-direction: column; align-items: stretch; }
+	.wise-mirror-topbar { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
